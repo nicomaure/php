@@ -1,1 +1,0 @@
-sudo php<?php
