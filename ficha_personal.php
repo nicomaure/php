@@ -1,7 +1,8 @@
 <?php
-date_default_timezone_set('America/Argentina/Buenos_Aires');//para setear el horario de argentina
+date_default_timezone_set('America/Argentina/Buenos_Aires'); //para setear el horario de argentina
 $nombre = "Nicolás Martín Maure";
 $edad = 42;
+$aPeliculas = array("Volver al futuro", "Scarface", "Casino"); //para crear una lista de peliculas 
 ?>
 
 <!DOCTYPE html>
@@ -28,11 +29,11 @@ $edad = 42;
 
                     <tr>
                         <th>Fecha:</th>
-                        <td><?php echo date ("d/m/Y"); ?></td>                        
+                        <td><?php echo date("d/m/Y"); ?></td>
                     </tr>
                     <tr>
                         <th>Nombre y Apellido:</th>
-                        <td><?php echo $nombre; ?></td>
+                        <td><?php echo $nombre; ?></td> <!--echo muestra contenido de la variable en la pantalla-->
                     </tr>
                     <tr>
                         <th>Edad:</th>
@@ -41,7 +42,7 @@ $edad = 42;
                     <tr>
                         <th>Peliculas Favoritas:</th>
                         <td>
-                            Volver al futuron<br>
+                            Volver al futuro<br>
                             Scarface<br>
                             Casino
                         </td>
