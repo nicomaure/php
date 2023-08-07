@@ -41,10 +41,9 @@ $aPeliculas = array("Volver al futuro", "Scarface", "Casino"); //para crear una 
                     </tr>
                     <tr>
                         <th>Peliculas Favoritas:</th>
-                        <td>
-                            Volver al futuro<br>
-                            Scarface<br>
-                            Casino
+                        <td><?php echo $aPeliculas[0]; ?><br>
+                            <?php echo $aPeliculas[1]; ?><br>
+                            <?php echo $aPeliculas[2]; ?>                                                                                   
                         </td>
                     </tr>
                 </table>
