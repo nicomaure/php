@@ -1,8 +1,12 @@
 <?php
+ini_set('display_errors', 1); //para reportar errores en xammp
+ini_set('display_startup_errors', 1); //para reportar errores en xammp
+error_reporting(E_ALL); //para reportar errores en xammp
+
 date_default_timezone_set('America/Argentina/Buenos_Aires'); //para setear el horario de argentina
 $nombre = "Nicolás Martín Maure";
 $edad = 42;
-$aPeliculas = array("Volver al futuro", "Scarface", "Casino"); //para crear una lista de peliculas 
+$aPeliculas = array("Volver al futuro", "Scarface", "Casino"); //el prefijo a de array en minuscula y continua con mayusculas para crear una lista de peliculas 
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +47,7 @@ $aPeliculas = array("Volver al futuro", "Scarface", "Casino"); //para crear una 
                         <th>Peliculas Favoritas:</th>
                         <td><?php echo $aPeliculas[0]; ?><br>
                             <?php echo $aPeliculas[1]; ?><br>
-                            <?php echo $aPeliculas[2]; ?>                                                                                   
+                            <?php echo $aPeliculas[2]; ?>
                         </td>
                     </tr>
                 </table>
