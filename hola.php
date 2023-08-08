@@ -9,7 +9,7 @@
 <body>
     <?php
     echo "Hola Mundo <br>"; //echo para imprimir por pantalla
-    echo date("d/m/Y"); // Y mayusculas muestra los 4 digitos del año
+    echo date("d/m/Y"); // Y mayusculas muestra los 4 digitos del año 
     ?>
 </body>
 </html>
