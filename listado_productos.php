@@ -2,6 +2,26 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+$aProductos = array();
+$aProductos[] = array("nombre" => "Smart TV 55\" 4K UHD",
+    "marca" => "Hitachi",
+    "modelo" => "554KS20",
+    "stock" => 60,
+    "precio" => 58000
+);
+$aProductos[] = array("nombre" => "Samsung Galaxy A30 Blanco",
+    "marca" => "Samsung",
+    "modelo" => "Galaxy A30",
+    "stock" => 0,
+    "precio" => 22000,
+);
+$aProductos[] = array("nombre" => "Aire Acondicionado Split Inverter Frío/Calor Surrey 2900F",
+    "marca" => "Surrey",
+    "modelo" => "553AIQ1201E",
+    "stock" => 5,
+    "precio" => 45000,
+);
 ?>
 
 <!DOCTYPE html>
@@ -34,30 +54,30 @@ error_reporting(E_ALL);
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Srmat Tv 55" 4K UHD</td>
-                            <td>Hitachi</td>
-                            <td>554KS20</td>
-                            <td>Hay stock</td>
-                            <td>$58000</td>
-                            <td>Comprar</td>
-                        </tr>
-                        <tr>
-                            <td>Samsung Galaxy A30 Blanco</td>
-                            <td>Samsung</td>
-                            <td>Galaxy A30</td>
-                            <td>Sin stock</td>
-                            <td>$22000</td>
-                            <td>Comprar</td>
-                        </tr>
-                        <tr>
-                            <td>Aire Acondicionado Split F/C Surrey 2900F</td>
-                            <td>Surrey</td>
-                            <td>553AIQ1201E</td>
-                            <td>Poco stock</td>
-                            <td>$45000</td>
-                            <td>Comprar</td>
-                        </tr>
+                    <tr>
+                        <td><?php echo $aProductos[0]["nombre"]; ?></td>
+                        <td><?php echo $aProductos[0]["marca"]; ?></td>
+                        <td><?php echo $aProductos[0]["modelo"]; ?></td>
+                        <td><?php echo $aProductos[0]["stock"] == 0? "No hay stock" : ($aProductos[0]["stock"]> 10? "Hay stock" : "Poco stock"); ?></td>
+                        <td>$ <?php echo $aProductos[0]["precio"]; ?></td>
+                        <td><button class="btn btn-primary">Comprar</button></td>
+                    </tr>
+                    <tr>
+                        <td><?php echo $aProductos[1]["nombre"]; ?></td>
+                        <td><?php echo $aProductos[1]["marca"]; ?></td>
+                        <td><?php echo $aProductos[1]["modelo"]; ?></td>
+                        <td><?php echo $aProductos[1]["stock"] == 0? "No hay stock" : ($aProductos[1]["stock"] > 10? "Hay stock" : "Poco stock"); ?></td>
+                        <td>$ <?php echo $aProductos[1]["precio"]; ?></td>
+                        <td><button class="btn btn-primary">Comprar</button></td>
+                    </tr>
+                    <tr>
+                        <td><?php echo $aProductos[2]["nombre"]; ?></td>
+                        <td><?php echo $aProductos[2]["marca"]; ?></td>
+                        <td><?php echo $aProductos[2]["modelo"]; ?></td>
+                        <td><?php echo $aProductos[2]["stock"] == 0? "No hay stock" : ($aProductos[2]["stock"] > 10? "Hay stock" : "Poco stock"); ?></td>
+                        <td>$ <?php echo $aProductos[2]["precio"]; ?></td>
+                        <td><button class="btn btn-primary">Comprar</button></td>
+                    </tr>
 
                     </tbody>
                     
