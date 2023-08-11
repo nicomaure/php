@@ -4,19 +4,22 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 $aProductos = array();
-$aProductos[] = array("nombre" => "Smart TV 55\" 4K UHD",
+$aProductos[] = array(
+    "nombre" => "Smart TV 55\" 4K UHD",
     "marca" => "Hitachi",
     "modelo" => "554KS20",
     "stock" => 60,
     "precio" => 58000
 );
-$aProductos[] = array("nombre" => "Samsung Galaxy A30 Blanco",
+$aProductos[] = array(
+    "nombre" => "Samsung Galaxy A30 Blanco",
     "marca" => "Samsung",
     "modelo" => "Galaxy A30",
     "stock" => 0,
     "precio" => 22000,
 );
-$aProductos[] = array("nombre" => "Aire Acondicionado Split Inverter Frío/Calor Surrey 2900F",
+$aProductos[] = array(
+    "nombre" => "Aire Acondicionado Split Inverter Frío/Calor Surrey 2900F",
     "marca" => "Surrey",
     "modelo" => "553AIQ1201E",
     "stock" => 5,
@@ -43,9 +46,9 @@ $aProductos[] = array("nombre" => "Aire Acondicionado Split Inverter Frío/Calor
         <div class="row">
             <div class="col-12">
                 <table class="table border table-hover">
-                   <thead> 
+                    <thead>
                         <tr>
-                            <th>Nombre</th> 
+                            <th>Nombre</th>
                             <th>Marca</th>
                             <th>Modelo</th>
                             <th>Stock</th>
@@ -57,23 +60,23 @@ $aProductos[] = array("nombre" => "Aire Acondicionado Split Inverter Frío/Calor
 
                         <?php
                         $contador = 0;
-                        while ($contador < 3){ ?>
-                                    
+                        while ($contador < 3) { ?>
+
                             <tr>
                                 <td><?php echo $aProductos[$contador]["nombre"]; ?></td>
                                 <td><?php echo $aProductos[$contador]["marca"]; ?></td>
                                 <td><?php echo $aProductos[$contador]["modelo"]; ?></td>
-                                <td><?php echo $aProductos[$contador]["stock"] == 0? "No hay stock" : ($aProductos[$contador]["stock"]> 10? "Hay stock" : "Poco stock"); ?></td>
+                                <td><?php echo $aProductos[$contador]["stock"] == 0 ? "No hay stock" : ($aProductos[$contador]["stock"] > 10 ? "Hay stock" : "Poco stock"); ?></td>
                                 <td>$ <?php echo $aProductos[$contador]["precio"]; ?></td>
                                 <td><button class="btn btn-primary">Comprar</button></td>
                             </tr>
 
-                        <?php 
+                        <?php
                             $contador++;
                         } ?>
-                                    
+
                     </tbody>
-                    
+
                 </table>
 
             </div>
