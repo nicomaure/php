@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 ?>
 
         <?php
+        /*
             $contador = 1;
         
             while($contador <= 100){ 
@@ -18,10 +19,10 @@ error_reporting(E_ALL);
                 $contador ++; }
 
             
-
+        */
         
     
-        /*
+        
                   
             for ( $i = 0;$i <=100; $i+=2){
             echo $i. "<br>";
@@ -30,6 +31,6 @@ error_reporting(E_ALL);
               }
             }
 
-        */  
+         
         ?> 
     
