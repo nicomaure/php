@@ -6,8 +6,8 @@ error_reporting(E_ALL);
    
 <?php
 //Definicion de pacientes
-$aPacientes = array();
-$aPacientes[] = array(
+$aPacientes = array(); //Defino el array
+$aPacientes[] = array( //cargo 4 array con datos de paciente sobre el array pripal
     "dni" => "37.765.012",
     "nombre" => "Ana Acuña",
     "edad" => 45,
@@ -33,3 +33,16 @@ $aPacientes[] = array(
 );
 
 ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Clinica</title>
+</head>
+<body>
+    
+</body>
+</html>
