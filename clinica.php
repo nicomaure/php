@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
-   
+
 <?php
 //Definicion de pacientes
 $aPacientes = array(); //Defino el array
@@ -35,6 +35,7 @@ $aPacientes[] = array(
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,8 +43,9 @@ $aPacientes[] = array(
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Listado de pacientes</title>
 </head>
+
 <body>
-     <main class="container">
+    <main class="container">
         <div class="text-center py-5">
             <h1>Listado de pacientes</h1>
         </div>
@@ -61,22 +63,28 @@ $aPacientes[] = array(
                     <tbody>
                         <?php
                         $i = 0;
-                        for($i = 0;$i < count($aPacientes); $i++)
+                        for ($i = 0; $i < count($aPacientes); $i++) {
 
                         ?>
-                        <tr>
-                            <td><?php echo $aPacientes[$i]["dni"]; ?></td>
-                            <td><?php echo $aPacientes[$i]["nombre"]; ?></td>
-                            <td><?php echo $aPacientes[$i]["edad"]; ?></td>
-                            <td><?php echo $aPacientes[$i]["peso"]; ?></td>
-                        </tr>
+                            <tr>
+                                <td><?php echo $aPacientes[$i]["dni"]; ?></td>
+                                <td><?php echo $aPacientes[$i]["nombre"]; ?></td>
+                                <td><?php echo $aPacientes[$i]["edad"]; ?></td>
+                                <td><?php echo $aPacientes[$i]["peso"]; ?></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+
                     </tbody>
+
                 </table>
 
             </div>
         </div>
 
-     </main>
-    
+    </main>
+
 </body>
+
 </html>
