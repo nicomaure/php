@@ -43,6 +43,40 @@ $aPacientes[] = array(
     <title>Listado de pacientes</title>
 </head>
 <body>
+     <main class="container">
+        <div class="text-center py-5">
+            <h1>Listado de pacientes</h1>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <table class="table border table-hover">
+                    <thead>
+                        <tr>
+                            <th>DNI</th>
+                            <th>Nombre y apellido</th>
+                            <th>Edad</th>
+                            <th>Peso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $i = 0;
+                        for($i = 0;$i < count($aPacientes); $i++)
+
+                        ?>
+                        <tr>
+                            <td><?php echo $aPacientes[$i]["dni"]; ?></td>
+                            <td><?php echo $aPacientes[$i]["nombre"]; ?></td>
+                            <td><?php echo $aPacientes[$i]["edad"]; ?></td>
+                            <td><?php echo $aPacientes[$i]["peso"]; ?></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+     </main>
     
 </body>
 </html>
