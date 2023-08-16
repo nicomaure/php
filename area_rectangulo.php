@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 <?php
 //Definición
 function calcularAreaRect($base, $altura){
+    $area = ($base * $altura);
 
 }
 
