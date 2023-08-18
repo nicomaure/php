@@ -18,6 +18,20 @@ error_reporting(E_ALL);
         <div class="text-center py-5">
             <h1>Listado de empleados</h1>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <table class="table border tabler-hover">
+                    <thead>
+                        <tr>
+                            <th>DNI</th>
+                            <th>NOMBRE</th>
+                            <th>SUELDO</th>
+                        </tr>
+                    </thead>
+
+                </table>
+            </div>
+        </div>
 
     </main>
     
