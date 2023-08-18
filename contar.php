@@ -8,11 +8,32 @@ error_reporting(E_ALL);
 //Definicion
 $aNotas = array(9, 8, 9.50, 4, 7, 8);
 
-$aEmpleados = array();
-$aEmpleados[] = array("dni" => 33300123, "nombre" => "David García", "bruto" => 85000.30);
-$aEmpleados[] = array("dni" => 40874456, "nombre" => "Ana Del Valle", "bruto" => 90000);
-$aEmpleados[] = array("dni" => 67567565, "nombre" => "Andrés Perez", "bruto" => 90000);
-$aEmpleados[] = array("dni" => 75744545, "nombre" => "Victoria Luz", "bruto" => 90000);
+//Definicion de pacientes
+$aPacientes = array(); //Defino el array
+$aPacientes[] = array( //cargo 4 array con datos de paciente sobre el array pripal
+    "dni" => "37.765.012",
+    "nombre" => "Ana Acuña",
+    "edad" => 45,
+    "peso" => 81.50
+);
+$aPacientes[] = array(
+    "dni" => "23.684.385",
+    "nombre" => "Gonzalo Bustamante",
+    "edad" => 66,
+    "peso" => 79
+);
+$aPacientes[] = array(
+    "dni" => "23.684.385",
+    "nombre" => "Juan Irraola",
+    "edad" => 28,
+    "peso" => 79
+);
+$aPacientes[] = array(
+    "dni" => "23.684.385",
+    "nombre" => "Beatriz Ocampo",
+    "edad" => 50,
+    "peso" => 79
+);
 
 $aProductos = array();
 $aProductos[] = array("nombre" => "Smart TV 55\" 4K UHD",
@@ -39,7 +60,7 @@ function contar($aArray){
 
 //Uso
 echo "Cantidad de productos: " . contar($aProductos) . "<br>";
-echo "Cantidad de pacientes: " . contar($aEmpleados) . "<br>";
+echo "Cantidad de pacientes: " . contar($aPacientes) . "<br>";
 echo "Cantidad de notas: " . contar($aNotas);
 
 
