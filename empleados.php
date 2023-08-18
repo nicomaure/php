@@ -4,6 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,6 +29,14 @@ error_reporting(E_ALL);
                             <th>SUELDO</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
 
                 </table>
             </div>
