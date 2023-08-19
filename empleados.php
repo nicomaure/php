@@ -45,8 +45,8 @@ $aEmpleados[] = array("dni"=>75744545, "nombre"=>"Victoria Luz", "Bruto"=>70000)
                         ?>
                             <tr>
                                 <td><?php echo $empleado["dni"]; ?></td>
-                                <td><?php echo $empleado["nombre"]; ?></td>
-                                <td><?php echo $empleado["Bruto"]; ?></td>
+                                <td><?php echo strtoupper($empleado["nombre"]); ?></td>
+                                <td><?php echo number_format($empleado["Bruto"], 2, "," , "."); ?></td>
                             </tr>
                         <?php
                         }
