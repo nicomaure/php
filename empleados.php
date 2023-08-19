@@ -60,7 +60,7 @@ $aEmpleados[] = array("dni" => 75744545, "nombre" => "Victoria Luz", "Bruto" => 
 
 
                 </table>
-                <div>
+                <div class="col-12">
                     <?php
                     function contar($aEmpleados)
                     {
@@ -70,8 +70,10 @@ $aEmpleados[] = array("dni" => 75744545, "nombre" => "Victoria Luz", "Bruto" => 
                         }
                         return $cont;
                     }
-                    echo "Cantidad de empleados son : " . contar($aEmpleados) . "<br>";
+                    echo "Cantidad de empleados activos : " . contar($aEmpleados) . "<br>";
+                    // <p>Cantidad de empleados activos: <?php echo count($aEmpleados);
                     ?>
+                    
 
 
 
