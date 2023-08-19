@@ -38,12 +38,20 @@ $aEmpleados[] = array("dni"=>75744545, "nombre"=>"Victoria Luz", "Bruto"=>70000)
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        
+                        <?php
+                        foreach($aEmpleados as $empleado) {
+
+                        ?>
+                            <tr>
+                                <td><?php echo $empleado["dni"]; ?></td>
+                                <td><?php echo $empleado["nombre"]; ?></td>
+                                <td><?php echo $empleado["Bruto"]; ?></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                        
                     </tbody>
 
                 </table>
