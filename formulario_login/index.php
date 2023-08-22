@@ -30,8 +30,27 @@ if($_POST){ /*Pregunta si el usuario envio datos en el formulario, es el evento 
     <title>formulario</title>
 </head>
 <body>
-    <main>
-        
+    <main class="container">
+        <div class="row">
+            <div class="col-12 text-cent py-5">
+                <h1>Formulario de Ingreso</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <form action="" method="post">
+                    <div>
+                        <label for="">Usuario</label>
+                        <input type="text" name="txtUsuario" id="txtUsuario">
+                    </div>
+                    <div>
+                        <label for="">clave</label>
+                        <input type="password" name="txtClave" id="txtClave">
+                    </div>
+                </form>
+            </div>
+        </div>
+
     </main>
     
 </body>
