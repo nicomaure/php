@@ -9,7 +9,7 @@ if ($_POST) { /*Pregunta si el usuario envio datos en el formulario, es el event
     $usuario = $_POST["txtUsuario"];
     $clave = $_POST["txtClave"];
     if ($usuario == "admin" && "$clave" == "123456") {
-        header("Location: https://google.com");
+        header("Location: acceso-confirmado.php");
     } else {
         $msg = "Usuario o clave incorrecto";
     }
@@ -47,6 +47,9 @@ if ($_POST) { /*Pregunta si el usuario envio datos en el formulario, es el event
                     </div>
                     <div>
                         <button type="submit" name="btnIngresar" class="btn btn-primary">INGRESAR</button>
+                    </div>
+                    <div class="alert alert-dark" role="alert">
+                              <?php echo $msg ?>
                     </div>
                 </form>
             </div>
