@@ -36,6 +36,11 @@ if ($_POST) { /*Pregunta si el usuario envio datos en el formulario, es el event
         </div>
         <div class="row">
             <div class="col-12">
+                <?php if (isset($mensaje)) : ?>
+                    <div class="alert alert-dark pb-3" role="alert">
+                        <?php echo $mensaje ?>
+                    </div>
+                <?php endif; ?>
                 <form action="" method="post">
                     <div class="pb-3">
                         <label for="">Usuario</label>
@@ -48,9 +53,8 @@ if ($_POST) { /*Pregunta si el usuario envio datos en el formulario, es el event
                     <div>
                         <button type="submit" name="btnIngresar" class="btn btn-primary">INGRESAR</button>
                     </div>
-                    <div class="alert alert-dark" role="alert">
-                              <?php echo $msg ?>
-                    </div>
+
+
                 </form>
             </div>
         </div>
