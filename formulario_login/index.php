@@ -6,12 +6,12 @@ error_reporting(E_ALL);
 
 
 if ($_POST) { /*Pregunta si el usuario envio datos en el formulario, es el evento postback*/
-    $usuario = $_POST["txtUsuario"];
-    $clave = $_POST["txtClave"];
+    $usuario = $_REQUEST["txtUsuario"];
+    $clave = $_REQUEST["txtClave"];
     if ($usuario == "admin" && "$clave" == "123456") {
         header("Location: acceso-confirmado.php");
     } else {
-        $msg = "Usuario o clave incorrecto";
+        $mensaje = "Valido para usuarios registrados";
     }
 }
 ?>
@@ -35,7 +35,7 @@ if ($_POST) { /*Pregunta si el usuario envio datos en el formulario, es el event
             </div>
         </div>
         <div class="row">
-            <div class="col-6">
+            <div class="col-12">
                 <form action="" method="post">
                     <div class="pb-3">
                         <label for="">Usuario</label>
