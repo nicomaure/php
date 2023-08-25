@@ -25,6 +25,18 @@ error_reporting(E_ALL);
         </div>
         <div class="row">
             <div class="col-4">
+                <table class="">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>DNI</th>
+                            <th>Teléfono</th>
+                            <th>Edad</th>
+                            </tr>
+
+                    </thead>
+                </table>
+                
 
             </div>
         </div>
