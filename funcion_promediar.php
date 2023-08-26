@@ -16,4 +16,7 @@ function promediar($aNumeros){
 
 
 $aNotas = array(8,4,5,3,9,1);
-echo "El promedio es: " .promediar($aNotas) . "<br>";
+echo "El promedio de las notas es: " .promediar($aNotas) . "<br>";//llamo a la funcion promediar con el . y envio el array $aNotas
+
+$aSueldos = array(8000,4000,5000,3000,9000,1000);
+echo "El promedio del sueldo es: " .promediar($aSueldos) . "<br>";
