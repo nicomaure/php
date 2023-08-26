@@ -25,7 +25,7 @@ error_reporting(E_ALL);
         <div>
             <div class="row">
                 <div class="col-12">
-                    <form action="" method="post">
+                    <form action="resultado.php" method="POST">
                         <div class="pb-3">
                             <label for="">Nombre:*</label>
                             <input type="text" name="txtNombre" id="txtNombre" class="form-control">

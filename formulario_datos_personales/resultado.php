@@ -4,6 +4,14 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 
+if($_POST){
+    $nombre = trim($_POST["txtNombre"]);
+    $dni = trim($_POST["txtDni"]);
+    $telefono = trim($_POST["txtTelefono"]);
+    $edad = trim($_POST["txtEdad"]);
+}
+
+
 ?>
 
 
@@ -24,17 +32,26 @@ error_reporting(E_ALL);
             </div>           
         </div>
         <div class="row">
-            <div class="col-4">
-                <table class="">
+            <div class="col-12">
+                <table class="table table-hover border">
                     <thead>
                         <tr>
                             <th>Nombre</th>
                             <th>DNI</th>
                             <th>Teléfono</th>
                             <th>Edad</th>
-                            </tr>
+                        </tr>
 
                     </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><?php echo $nombre; ?></td>
+                            <td><?php echo $dni; ?></td>
+                            <td><?php echo $telefono; ?></td>
+                            <td><?php echo $edad; ?></td>
+                        </tr>
+                    </tbody>
                 </table>
                 
 
