@@ -1,10 +1,3 @@
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -18,7 +11,7 @@ error_reporting(E_ALL);
 <body>
     <main class="container">
         <div class="row">
-            <div class="col-12 text-cent py-5">
+            <div class="col-12 text-center py-5">
                 <h1>Formulario de datos personales</h1>
             </div>
         </div>
