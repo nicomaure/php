@@ -24,6 +24,12 @@ if ($_POST){
 </head>
 <body>
     <main class="container">
+        <div class="row">
+            <div class="col-12 text-center py-5">
+                <h1>Calculadora de IVA</h1>
+
+            </div>
+        </div>
 
     </main>
     
