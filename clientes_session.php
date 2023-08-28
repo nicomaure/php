@@ -3,11 +3,26 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+
+session_start();
+
+if (isset($_SESSION["listadoClientes"])){
+    $aClientes = $_SESSION["listadoClientes"];
+} else{
+    $aClientes = array();
+}
+
+
+
 if($_POST){
-$nombre= $_POST["txtNombre"];
-$dni=$_POST["txtDni"];
+$nombre = $_POST["txtNombre"];
+$dni = $_POST["txtDni"];
 $telefono = $_POST["txtTelefono"];
 $edad = $_POST["txtEdad"];
+
+//creo un array que tendra el listado de clientes
+
+$aClientes[] = array("nombre" => $nombre, "dni" => $dni, "telefono" => $telefono, "edad" => $edad);
 
 }
 
@@ -32,39 +47,33 @@ $edad = $_POST["txtEdad"];
             </div>
         </div>
         <div class="row">
-            <div class="col-3 offset-1">
+            <div class="col-3 offset-1 me-5">
                 <form action="" method="post">
-                    <div>
+                  
                         <label for="">Nombre:</label>
-                        <input type="text" name="txtNombre"id=txtNombre class= form-control>
-                    </div>
-                    <div>
+                        <input type="text" name="txtNombre"id="txtNombre" placeholder="Ingrese el nombre y apellido" class= "form-control my-2">
+                  
+                
                         <label for="">DNI:</label>
-                        <input type="text" name="txtDni" id="txtDni" class="form-control">
-                    </div>
-                    <div>
+                        <input type="text" name="txtDni" id="txtDni" class="form-control my-2">
+                 
+           
                         <label for="">Telefono:</label>
-                        <input type="tel" name="txtTelefono" id="txtTelefono" class="form-control">
-                    </div>
-                    <div>
+                        <input type="tel" name="txtTelefono" id="txtTelefono" class="form-control my-2">
+                  
                         <label for="">Edad:</label>
-                        <input type="text" name="txtEdad" id="txtEdad" class="form-control">
-                    </div>                       
-                    <div class="row pt-3">
-                    <div class="col-6">
-                        <button type="submit" name="btnEnviar" class="btn btn-primary">Enviar</button>
-                     </div>
+                        <input type="text" name="txtEdad" id="txtEdad" class="form-control my-2">
+                   
+                        <button type="submit" name="btnEnviar" class="btn bg-primary text-white">Enviar</button>
+                        <button type="reset" name="btnEliminar"class="btn bg-danger text-white">Eliminar</button>
                         
-                    <div class="col-6 text-end">
-                         <button type="reset" name="btnEliminar"class="btn btn-danger">Eliminar</button>
-                    </div>
-                    </div>
+                 
                       
                 </form>
 
             </div>
-            <div class="col-6 pt-4 offset-1">
-                <table class="table border table-hover">
+            <div class="col-6 ms-5">
+                <table class="table shadow border table-hover">
                     <thead>
                         <tr>
                             <th>Nombre:</th>
@@ -75,13 +84,15 @@ $edad = $_POST["txtEdad"];
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach($aClientes as $cliente):?>
                         <tr>
-                            <td><?php echo $nombre ?></td>
-                            <td><?php echo $dni ?></td>
-                            <td><?php echo $telefono ?></td>
-                            <td><?php echo $edad ?></td>
+                            <td><?php echo $cliente["nombre"] ?></td>
+                            <td><?php echo $cliente["dni"] ?></td>
+                            <td><?php echo $cliente["telefono"] ?></td>
+                            <td><?php echo $cliente["edad"] ?></td>
 
                         </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
