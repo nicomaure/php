@@ -3,6 +3,14 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+if($_POST){
+$nombre= $_POST["txtNombre"];
+$dni=$_POST["txtDni"];
+$telefono = $_POST["txtTelefono"];
+$edad = $_POST["txtEdad"];
+
+}
+
 ?>
 
 
@@ -68,10 +76,10 @@ error_reporting(E_ALL);
                     </thead>
                     <tbody>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><?php echo $nombre ?></td>
+                            <td><?php echo $dni ?></td>
+                            <td><?php echo $telefono ?></td>
+                            <td><?php echo $edad ?></td>
 
                         </tr>
                     </tbody>
