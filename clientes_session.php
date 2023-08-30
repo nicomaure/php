@@ -32,6 +32,13 @@ if ($_POST) {
         $aClientes = array();
     }
 }
+
+if(isset($_GET["pos"])){
+    $pos = $_GET["pos"];
+    unset($aClientes[$pos]);
+    $_SESSION["listadoClientes"] = $aClientes;
+    header("location: clientes_session.php");
+}
 ?>
 
 
@@ -42,8 +49,9 @@ if ($_POST) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">   
     <title>Listado de clientes</title>
 </head>
 
@@ -73,9 +81,7 @@ if ($_POST) {
                     <input type="text" name="txtEdad" id="txtEdad" class="form-control my-2">
 
                     <button type="submit" name="btnEnviar" class="btn bg-primary text-white">Enviar</button>
-                    <button type="reset" name="btnEliminar" class="btn bg-danger text-white">Eliminar</button>
-
-
+                    <button type="submit" name="btnEliminar" class="btn bg-danger text-white">Eliminar</button>
 
                 </form>
 
@@ -88,16 +94,18 @@ if ($_POST) {
                             <th>DNI:</th>
                             <th>Teléfono:</th>
                             <th>Edad:</th>
+                            <th>Acciones</th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($aClientes as $cliente) : ?>
+                        <?php foreach ($aClientes as $pos => $cliente) : ?>
                             <tr>
                                 <td><?php echo $cliente["nombre"] ?></td>
                                 <td><?php echo $cliente["dni"] ?></td>
                                 <td><?php echo $cliente["telefono"] ?></td>
                                 <td><?php echo $cliente["edad"] ?></td>
+                                <td><a href="clientes_session.php?pos=<?php echo $pos; ?>"><i class="bi bi-trash"></i></td>
 
                             </tr>
                         <?php endforeach; ?>
