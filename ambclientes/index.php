@@ -3,6 +3,38 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+session_start();
+if(isset($_SESSION["listadoClientes"])){
+    $aClientes = $_SESSION["listadoClientes"];
+}else{
+    $aClientes = array();
+}
+
+
+
+
+
+
+
+if($_POST){
+    if(isset($_POST["btnGuardar"])){        
+        $dni = $_POST ["txtDni"];
+        $nombre = $_POST["txtNombre"];
+        $telefono = $_POST["txtTelefono"];
+        $correo = $_POST["txtCorreo"];
+
+        $aClientes[] = array("dni" => $dni, "nombre" => $nombre, "telefono" => $telefono, "correo" => $correo);
+    }
+}
+
+if(isset($_GET["pos"])){
+    $pos = $_GET["pos"];
+    unset($aClientes[$pos]);
+    $_SESSION["listadoClientes"] = $aClientes;
+    header("location: index.php");
+}
+
+
 
 ?>
 
@@ -24,25 +56,29 @@ error_reporting(E_ALL);
         </div>
         <div class="row">
             <div class="col-6">
-                <form action="" method="post">
-                <div class="pb-3">               
-                    <label for="">DNI: *</label>
-                    <input type="text" name="txtDni" id="txtDni" class="form-control">
-                </div>
-                <div class="pb-3">               
-                    <label for="">Nombre: *</label>
-                    <input type="text" name="txtNombre" id="txtNombre" class="form-control">
-                </div>
-                <div class="pb-3">
-                    <label for="">Teléfono: *</label>
-                    <input type="tel" name="txtTelefono" id="txtTelefono" class="form-control">
-                </div>
-                <div class="pb-3">
-                    <label for="">Correo: *</label>
-                    <input type="email" name="txtEmail" id="txtEmail" class="form-control">
-                </div>
+                <form action="" method="post" enctype="multipart/form-data">
+                            
+                        <label for="">DNI: *</label>
+                        <input type="text" name="txtDni" id="txtDni" class="form-control my-2">
+                                               
+                        <label for="">Nombre: *</label>
+                        <input type="text" name="txtNombre" id="txtNombre" class="form-control my-2" placeholder="Ingrese nombre y apellido">
                     
+                        <label for="">Teléfono: *</label>
+                        <input type="tel" name="txtTelefono" id="txtTelefono" class="form-control my-2">
+                   
+                        <label for="">Correo: *</label>
+                        <input type="email" name="txtEmail" id="txtEmail" class="form-control my-2">
+                    
+                        <label for="">Archivo adjunto</label>
+                        <input type="file" name="archivo" id="archivo" accept=".jpg,.jpeg, .png">
+                        <small class="d-block">Archivos admitidos: .jpg, .jpeg, .png</small>  
+                    
+                        <button type="submit" name="btnGuardar" class="btn bg-primary text-white">Guardar</button>
+                        <button type="submit" name="btnNUEVO" class="btn bg-danger text-white">NUEVO</button>
+                          
                 </form>
+
                
             </div>
             <div class="col-6">
@@ -57,12 +93,16 @@ error_reporting(E_ALL);
 
                     </thead>
                     <tbody>
+                        <?php foreach($aClientes as $pos=> $cliente) : ?>
                         <tr>
-                            <td>A</td>
-                            <td>B</td>
-                            <td>C</td>
-                            <td>D</td>
+                            <td><?php echo $aClientes["dni"] ?></td>
+                            <td><?php echo $aClientes["nombre"] ?></td>
+                            <td><?php echo $aClientes["telefono"] ?></td>
+                            <td><?php echo $aClientes["correo"] ?></td>
+                            <td><a href="clientes_session.php?pos=<?php echo $pos; ?>"><i class="bi bi-trash"></i></td>
+                            
                         </tr>
+                        <?php endforeach; ?>
 
                     </tbody>
 
