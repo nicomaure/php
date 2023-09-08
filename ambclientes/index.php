@@ -57,18 +57,22 @@ if(isset($_GET["pos"])){
         <div class="row">
             <div class="col-3 offset-1 me-5">
                 <form action="" method="post" enctype="multipart/form-data">
-                            
+                    <div>        
                         <label for="">DNI: *</label>
-                        <input type="text" name="txtDni" id="txtDni" class="form-control my-2">
-                                               
+                        <input type="text" name="txtDni" id="txtDni" class="form-control my-2 shadow">
+                    </div> 
+                    <div>                    
                         <label for="">Nombre: *</label>
-                        <input type="text" name="txtNombre" id="txtNombre" class="form-control my-2" placeholder="Ingrese nombre y apellido">
-                    
+                        <input type="text" name="txtNombre" id="txtNombre" class="form-control my-2 shadow" placeholder="Ingrese nombre y apellido">
+                    </div>     
+                    <div>
                         <label for="">Teléfono: *</label>
-                        <input type="tel" name="txtTelefono" id="txtTelefono" class="form-control my-2">
-                   
+                        <input type="tel" name="txtTelefono" id="txtTelefono" class="form-control my-2 shadow" placeholder="+54(261)">
+                    </div>
+                    <div>
                         <label for="">Correo: *</label>
-                        <input type="email" name="txtEmail" id="txtEmail" class="form-control my-2">
+                        <input type="email" name="txtEmail" id="txtEmail" class="form-control my-2 shadow">
+                    </div>
                     <div class="pb-2">
                         <label for="">Archivo adjunto</label>
                         <input type="file" name="archivo" id="archivo" accept=".jpg,.jpeg, .png">
