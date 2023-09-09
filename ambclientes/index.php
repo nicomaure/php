@@ -55,7 +55,7 @@ if(isset($_GET["pos"])){
             </div>
         </div>
         <div class="row">
-            <div class="col-4  me-5 card shadow-lg bg-success text-black">
+            <div class="col-4  me-5 card shadow-lg bg-success text-black pb-1">
                 <form action="" method="post" enctype="multipart/form-data">
                     <div>        
                         <label for="">DNI: *</label>
