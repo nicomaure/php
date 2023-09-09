@@ -94,10 +94,11 @@ if($_POST){
                         <tbody>
                             <?php foreach($aClientes as $pos=> $cliente) : ?>
                             <tr>
-                                <td><?php echo $aClientes["documento"] ?></td>
-                                <td><?php echo $aClientes["nombre"] ?></td>
-                                <td><?php echo $aClientes["telefono"] ?></td>
-                                <td><?php echo $aClientes["correo"] ?></td>
+                                <td><?php echo $cliete["documento"] ?></td>
+                                <td><?php echo $cliente["nombre"] ?></td>
+                                <td><?php echo $cliente["telefono"] ?></td>
+                                <td><?php echo $cliente["correo"] ?></td>
+                                
                                 <td><a href="clientes_session.php?pos=<?php echo $pos; ?>"><i class="bi bi-trash"></i></td>
                             
                             </tr>
