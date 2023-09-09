@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+$aClientes[] = array();
 
 if($_POST){
            
@@ -39,7 +39,9 @@ if($_POST){
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de clientes</title>
+    <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/fontawesome/css/fontawesome.min.css">
+    <title>AMB Clientes</title>
 </head>
 <body>
     <main class="container">
@@ -94,10 +96,10 @@ if($_POST){
                         <tbody>
                             <?php foreach($aClientes as $pos=> $cliente) : ?>
                             <tr>
-                                <td><?php echo $cliete["documento"] ?></td>
+                                <td><?php echo $cliente["documento"] ?></td>
                                 <td><?php echo $cliente["nombre"] ?></td>
                                 <td><?php echo $cliente["telefono"] ?></td>
-                                <td><?php echo $cliente["correo"] ?></td>
+                                <td><?php echo $acliente["correo"] ?></td>
                                 
                                 <td><a href="clientes_session.php?pos=<?php echo $pos; ?>"><i class="bi bi-trash"></i></td>
                             
