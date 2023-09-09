@@ -17,9 +17,13 @@ if($_POST){
                              "correo" => $correo);
 
     //convertir el array de $aClientes a jsonClientes
+   
+
     // almacenar el archivo jsonCllientes a un "archivo.txt"
     }
-
+    $jsonClientes = json_encode($aClientes);
+    $archivo = 'archivo.txt';
+    file_put_contents($archivo, $jsonClientes);
 
 
 
