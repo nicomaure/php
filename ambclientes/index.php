@@ -3,36 +3,24 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-session_start();
-if(isset($_SESSION["listadoClientes"])){
-    $aClientes = $_SESSION["listadoClientes"];
-}else{
-    $aClientes = array();
-}
-
-
-
-
-
-
 
 if($_POST){
-    if(isset($_POST["btnGuardar"])){        
-        $dni = $_POST ["txtDni"];
-        $nombre = $_POST["txtNombre"];
-        $telefono = $_POST["txtTelefono"];
-        $correo = $_POST["txtCorreo"];
+           
+        $documento = trim($_POST ["txtDocumento"]);
+        $nombre = trim($_POST["txtNombre"]);
+        $telefono = trim($_POST["txtTelefono"]);
+        $correo = trim($_POST["txtCorreo"]);
 
-        $aClientes[] = array("dni" => $dni, "nombre" => $nombre, "telefono" => $telefono, "correo" => $correo);
+        $aClientes[] = array("documento" => $documento,
+                             "nombre" => $nombre, 
+                             "telefono" => $telefono, 
+                             "correo" => $correo);
+
+    //convertir el array de $aClientes a jsonClientes
+    // almacenar el archivo jsonCllientes a un "archivo.txt"
     }
-}
 
-if(isset($_GET["pos"])){
-    $pos = $_GET["pos"];
-    unset($aClientes[$pos]);
-    $_SESSION["listadoClientes"] = $aClientes;
-    header("location: index.php");
-}
+
 
 
 
@@ -59,7 +47,7 @@ if(isset($_GET["pos"])){
                 <form action="" method="post" enctype="multipart/form-data">
                     <div>        
                         <label for="">DNI: *</label>
-                        <input type="text" name="txtDni" id="txtDni" class="form-control my-2 shadow">
+                        <input type="text" name="txtDocumento" id="txtDocumento" class="form-control my-2 shadow">
                     </div> 
                     <div>                    
                         <label for="">Nombre: *</label>
@@ -71,7 +59,7 @@ if(isset($_GET["pos"])){
                     </div>
                     <div>
                         <label for="">Correo: *</label>
-                        <input type="email" name="txtEmail" id="txtEmail" class="form-control my-2 shadow">
+                        <input type="email" name="txtCorreo" id="txtCorreo" class="form-control my-2 shadow">
                     </div>
                     <div class="pb-2">
                         <label for="">Archivo adjunto</label>
@@ -100,7 +88,7 @@ if(isset($_GET["pos"])){
                         <tbody>
                             <?php foreach($aClientes as $pos=> $cliente) : ?>
                             <tr>
-                                <td><?php echo $aClientes["dni"] ?></td>
+                                <td><?php echo $aClientes["documento"] ?></td>
                                 <td><?php echo $aClientes["nombre"] ?></td>
                                 <td><?php echo $aClientes["telefono"] ?></td>
                                 <td><?php echo $aClientes["correo"] ?></td>
