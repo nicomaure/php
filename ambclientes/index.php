@@ -55,7 +55,7 @@ if(isset($_GET["pos"])){
             </div>
         </div>
         <div class="row">
-            <div class="col-3 offset-1 me-5">
+            <div class="col-4  me-5 card shadow-lg bg-success text-black">
                 <form action="" method="post" enctype="multipart/form-data">
                     <div>        
                         <label for="">DNI: *</label>
@@ -86,32 +86,34 @@ if(isset($_GET["pos"])){
                
             </div>
             <div class="col-6 ms-5">
-                <table class="table border shadow table-hover">
-                    <thead>
-                        <tr>
-                            <th>Imagen</th>
-                            <th>DNI</th>
-                            <th>Correo</th>
-                            <th>Acciones</th>
-                        </tr>
+                <div class="card shadow-lg bg-success text-white text-center">
+                    <table class="table border table-hover">
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>DNI</th>
+                                <th>Correo</th>
+                                <th>Acciones</th>
+                            </tr>
 
-                    </thead>
-                    <tbody>
-                        <?php foreach($aClientes as $pos=> $cliente) : ?>
-                        <tr>
-                            <td><?php echo $aClientes["dni"] ?></td>
-                            <td><?php echo $aClientes["nombre"] ?></td>
-                            <td><?php echo $aClientes["telefono"] ?></td>
-                            <td><?php echo $aClientes["correo"] ?></td>
-                            <td><a href="clientes_session.php?pos=<?php echo $pos; ?>"><i class="bi bi-trash"></i></td>
+                        </thead>
+                        <tbody>
+                            <?php foreach($aClientes as $pos=> $cliente) : ?>
+                            <tr>
+                                <td><?php echo $aClientes["dni"] ?></td>
+                                <td><?php echo $aClientes["nombre"] ?></td>
+                                <td><?php echo $aClientes["telefono"] ?></td>
+                                <td><?php echo $aClientes["correo"] ?></td>
+                                <td><a href="clientes_session.php?pos=<?php echo $pos; ?>"><i class="bi bi-trash"></i></td>
                             
-                        </tr>
-                        <?php endforeach; ?>
+                            </tr>
+                            <?php endforeach; ?>
 
-                    </tbody>
+                        </tbody>
 
 
-                </table>
+                    </table>
+                </div>
             </div>
         </div>
 
