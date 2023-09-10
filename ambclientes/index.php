@@ -18,12 +18,6 @@ if (file_exists("archivo.txt")) {
 }
    
 
-   
-
-
-
-
-
 if($_POST){
            
         $documento = trim($_POST ["txtDocumento"]);
@@ -43,13 +37,7 @@ if($_POST){
    
     file_put_contents("archivo.txt", $jsonClientes);
     }
-   
-   
-
-
-
     
-
 ?>
 
 <!DOCTYPE html>
@@ -104,31 +92,28 @@ if($_POST){
             <div class="col-6 ms-5">
                 <div class="card shadow-lg bg-success text-white text-center">
                     <table class="table border table-hover">
-                        <thead>
+                        
                             <tr>
                                 <th>Imagen</th>
-                                <th>DNI</th>
+                                <th>Documento</th>
+                                <th>Nombre</th>
                                 <th>Correo</th>
                                 <th>Acciones</th>
                             </tr>
-
-                        </thead>
-                        <tbody>
-                            
+                                                                
                             <?php foreach($aClientes as $cliente): ?>
                             <tr>
-                                <td><?php echo $cliente["documento"] ?></td>
-                                <td><?php echo $cliente["nombre"] ?></td>
-                                <td><?php echo $cliente["telefono"] ?></td>
-                                <td><?php echo $cliente["correo"] ?></td>
-                                
-                                
-                            
+                                <td></td>
+                                <td><?php echo $cliente["documento"]; ?></td>
+                                <td><?php echo $cliente["nombre"]; ?></td>
+                                <td><?php echo $cliente["correo"]; ?></td>
+                                <td>
+                                    <i class="fa-solid fa-pencil"></i>
+                                    <i class="fa-solid fa-trash"></i>
+                                </td>
+                                                          
                             </tr>
                             <?php endforeach; ?>
-
-                        </tbody>
-
 
                     </table>
                 </div>
