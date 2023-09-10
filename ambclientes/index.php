@@ -10,38 +10,40 @@ if (file_exists("archivo.txt")) {
     $jsonClientes = file_get_contents("archivo.txt");
     //Convertir jsonClientes en un array llamado aClientes
     $aClientes = json_decode($jsonClientes, true);
-
 } else {
     //Si no existe el archivo
-   //Creamos un aCliente inicialiado como un array vacio
-        $aClientes = array();
+    //Creamos un aCliente inicialiado como un array vacio
+    $aClientes = array();
 }
-   
 
-if($_POST){
-           
-        $documento = trim($_POST ["txtDocumento"]);
-        $nombre = trim($_POST["txtNombre"]);
-        $telefono = trim($_POST["txtTelefono"]);
-        $correo = trim($_POST["txtCorreo"]);
 
-        $aClientes[] = array("documento" => $documento,
-                             "nombre" => $nombre, 
-                             "telefono" => $telefono, 
-                             "correo" => $correo);
+if ($_POST) {
+
+    $documento = trim($_POST["txtDocumento"]);
+    $nombre = trim($_POST["txtNombre"]);
+    $telefono = trim($_POST["txtTelefono"]);
+    $correo = trim($_POST["txtCorreo"]);
+
+    $aClientes[] = array(
+        "documento" => $documento,
+        "nombre" => $nombre,
+        "telefono" => $telefono,
+        "correo" => $correo
+    );
 
     //convertir el array de $aClientes a jsonClientes
     $jsonClientes = json_encode($aClientes);
 
     // almacenar el archivo jsonCllientes a un "archivo.txt"
-   
+
     file_put_contents("archivo.txt", $jsonClientes);
-    }
-    
+}
+
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
@@ -51,6 +53,7 @@ if($_POST){
     <link rel="stylesheet" href="css/fontawesome/css/fontawesome.min.css">
     <title>AMB Clientes</title>
 </head>
+
 <body>
     <main class="container">
         <div class="row">
@@ -61,14 +64,14 @@ if($_POST){
         <div class="row">
             <div class="col-4  me-5 card shadow-lg bg-success text-black pb-1">
                 <form action="" method="post" enctype="multipart/form-data">
-                    <div>        
+                    <div>
                         <label for="">DNI: *</label>
                         <input type="text" name="txtDocumento" id="txtDocumento" class="form-control my-2 shadow">
-                    </div> 
-                    <div>                    
+                    </div>
+                    <div>
                         <label for="">Nombre: *</label>
                         <input type="text" name="txtNombre" id="txtNombre" class="form-control my-2 shadow" placeholder="Ingrese nombre y apellido">
-                    </div>     
+                    </div>
                     <div>
                         <label for="">Teléfono: *</label>
                         <input type="tel" name="txtTelefono" id="txtTelefono" class="form-control my-2 shadow" placeholder="+54(261)">
@@ -80,28 +83,28 @@ if($_POST){
                     <div class="pb-2">
                         <label for="">Archivo adjunto</label>
                         <input type="file" name="archivo" id="archivo" accept=".jpg,.jpeg, .png">
-                        <small class="d-block">Archivos admitidos: .jpg, .jpeg, .png</small>  
+                        <small class="d-block">Archivos admitidos: .jpg, .jpeg, .png</small>
                     </div>
-                        <button type="submit" name="btnGuardar" class="btn bg-primary text-white">Guardar</button>
-                        <button type="submit" name="btnNUEVO" class="btn bg-danger text-white">NUEVO</button>
-                          
+                    <button type="submit" name="btnGuardar" class="btn bg-primary text-white">Guardar</button>
+                    <button type="submit" name="btnNUEVO" class="btn bg-danger text-white">NUEVO</button>
+
                 </form>
 
-               
+
             </div>
             <div class="col-6 ms-5">
                 <div class="card shadow-lg bg-success text-white text-center">
                     <table class="table border table-hover">
-                        
-                            <tr>
-                                <th>Imagen</th>
-                                <th>Documento</th>
-                                <th>Nombre</th>
-                                <th>Correo</th>
-                                <th>Acciones</th>
-                            </tr>
-                                                                
-                            <?php foreach($aClientes as $cliente): ?>
+
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Documento</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Acciones</th>
+                        </tr>
+
+                        <?php foreach ($aClientes as $cliente) : ?>
                             <tr>
                                 <td></td>
                                 <td><?php echo $cliente["documento"]; ?></td>
@@ -111,9 +114,9 @@ if($_POST){
                                     <i class="fa-solid fa-pencil"></i>
                                     <i class="fa-solid fa-trash"></i>
                                 </td>
-                                                          
+
                             </tr>
-                            <?php endforeach; ?>
+                        <?php endforeach; ?>
 
                     </table>
                 </div>
@@ -121,10 +124,7 @@ if($_POST){
         </div>
 
     </main>
-    
+
 </body>
+
 </html>
-
-
-
-
