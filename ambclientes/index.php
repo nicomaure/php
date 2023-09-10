@@ -104,15 +104,15 @@ if ($_POST) {
                             <th>Acciones</th>
                         </tr>
 
-                        <?php foreach ($aClientes as $cliente) : ?>
+                        <?php foreach ($aClientes as $pos => $cliente) : ?>
                             <tr>
                                 <td></td>
                                 <td><?php echo $cliente["documento"]; ?></td>
                                 <td><?php echo $cliente["nombre"]; ?></td>
                                 <td><?php echo $cliente["correo"]; ?></td>
                                 <td>
-                                    <i class="fa-solid fa-pencil"></i>
-                                    <i class="fa-solid fa-trash"></i>
+                                    <a href="index.php?pos=<?php echo $pos; ?>&do=editar"><i class="fa-solid fa-pencil"></i></a>
+                                    <a href="index.php?pos=<?php echo $pos; ?>&do=eliminar"><i class="fa-solid fa-trash"></i></a>
                                 </td>
 
                             </tr>
