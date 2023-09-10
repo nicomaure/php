@@ -39,6 +39,14 @@ if ($_POST) {
     file_put_contents("archivo.txt", $jsonClientes);
 }
 
+if(isset($_GET["do"]) && $_GET["do"] == "editar"){
+    $pos = isset($_GET["pos"]) && $_GET["pos"] >= 0? $_GET["pos"]:"";
+    print_r($aClientes[$pos]);
+}
+if(isset($_GET["do"]) && $_GET["do"] == "eliminar"){
+    $pos = isset($_GET["pos"]) && $_GET["pos"] >= 0? $_GET["pos"]:"";
+}
+
 ?>
 
 <!DOCTYPE html>
