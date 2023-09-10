@@ -2,6 +2,15 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+//Preguntar si existe el archivo
+   //Vamos a leerlo y almacenamos el conetenido en jsonClientes
+
+   //Convertir jsonClientes en un array llamado aClientes
+
+//Si no existe el archivo
+   //Creamos un aCliente inicialiado como un array vacio
+
 $aClientes[] = array();
 
 if($_POST){
