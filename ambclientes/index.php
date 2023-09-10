@@ -41,7 +41,7 @@ if ($_POST) {
 
 if(isset($_GET["do"]) && $_GET["do"] == "editar"){
     $pos = isset($_GET["pos"]) && $_GET["pos"] >= 0? $_GET["pos"]:"";
-    print_r($aClientes[$pos]);
+    
 }
 if(isset($_GET["do"]) && $_GET["do"] == "eliminar"){
     $pos = isset($_GET["pos"]) && $_GET["pos"] >= 0? $_GET["pos"]:"";
@@ -74,19 +74,19 @@ if(isset($_GET["do"]) && $_GET["do"] == "eliminar"){
                 <form action="" method="post" enctype="multipart/form-data">
                     <div>
                         <label for="">DNI: *</label>
-                        <input type="text" name="txtDocumento" id="txtDocumento" class="form-control my-2 shadow">
+                        <input type="text" name="txtDocumento" id="txtDocumento" class="form-control my-2 shadow" required value="<?php echo isset($aClientes[$pos])? $aClientes[$pos]["documento"]: ""; ?>">
                     </div>
                     <div>
                         <label for="">Nombre: *</label>
-                        <input type="text" name="txtNombre" id="txtNombre" class="form-control my-2 shadow" placeholder="Ingrese nombre y apellido">
+                        <input type="text" name="txtNombre" id="txtNombre" class="form-control my-2 shadow" placeholder="Ingrese nombre y apellido" required value="<?php echo isset($aClientes[$pos])? $aClientes[$pos]["nombre"]: ""; ?>">
                     </div>
                     <div>
                         <label for="">Teléfono: *</label>
-                        <input type="tel" name="txtTelefono" id="txtTelefono" class="form-control my-2 shadow" placeholder="+54(261)">
+                        <input type="tel" name="txtTelefono" id="txtTelefono" class="form-control my-2 shadow" placeholder="+54(261)" required value="<?php echo isset($aClientes[$pos])? $aClientes[$pos]["telefono"]: ""; ?>">
                     </div>
                     <div>
                         <label for="">Correo: *</label>
-                        <input type="email" name="txtCorreo" id="txtCorreo" class="form-control my-2 shadow">
+                        <input type="email" name="txtCorreo" id="txtCorreo" class="form-control my-2 shadow" required value="<?php echo isset($aClientes[$pos])? $aClientes[$pos]["correo"]: ""; ?>">
                     </div>
                     <div class="pb-2">
                         <label for="">Archivo adjunto</label>
@@ -100,7 +100,7 @@ if(isset($_GET["do"]) && $_GET["do"] == "eliminar"){
 
 
             </div>
-            <div class="col-6 ms-5">
+            <div class="col-7 ms-2">
                 <div class="card shadow-lg bg-success text-white text-center">
                     <table class="table border table-hover">
 
