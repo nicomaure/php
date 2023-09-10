@@ -4,6 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 //Preguntar si existe el archivo
+if (seet)
    //Vamos a leerlo y almacenamos el conetenido en jsonClientes
 
    //Convertir jsonClientes en un array llamado aClientes
