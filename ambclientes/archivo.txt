@@ -1,1 +1,1 @@
-[[],{"documento":"28774109","nombre":"Nicolas Maure","telefono":"26133155","correo":"nicomau@gmail.com"}]
+[[{"documento":"28774109","nombre":"Nicolas Maure","telefono":"26133155","correo":"nicomau@gmail.com"}],{"documento":"28774109","nombre":"Nicolas Maure","telefono":"26133155","correo":"nicomau@gmail.com"}]

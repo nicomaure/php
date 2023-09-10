@@ -4,15 +4,25 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 //Preguntar si existe el archivo
-if (seet)
-   //Vamos a leerlo y almacenamos el conetenido en jsonClientes
 
-   //Convertir jsonClientes en un array llamado aClientes
+if (file_exists("archivo.txt")) {
+    //Vamos a leerlo y almacenamos el conetenido en jsonClientes
+    $jsonClientes = file_get_contents("archivo.txt");
+    //Convertir jsonClientes en un array llamado aClientes
+    $aClientes[] = json_decode($jsonClientes, true);
 
-//Si no existe el archivo
+} else {
+    //Si no existe el archivo
    //Creamos un aCliente inicialiado como un array vacio
+        $aClientes[] = array();
+}
+   
 
-$aClientes[] = array();
+   
+
+
+
+
 
 if($_POST){
            
