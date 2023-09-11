@@ -16,6 +16,7 @@ if (file_exists("archivo.txt")) {
     $aClientes = array();
 }
 
+$pos = isset($_GET["pos"]) && $_GET["pos"] >= 0? $_GET["pos"]:"";
 
 if ($_POST) {
 
@@ -24,12 +25,24 @@ if ($_POST) {
     $telefono = trim($_POST["txtTelefono"]);
     $correo = trim($_POST["txtCorreo"]);
 
-    $aClientes[] = array(
-        "documento" => $documento,
-        "nombre" => $nombre,
-        "telefono" => $telefono,
-        "correo" => $correo
-    );
+    if($pos>=0){
+        //actualizar
+        $aClientes[$pos] = array(
+            "documento" => $documento,
+            "nombre" => $nombre,
+            "telefono" => $telefono,
+            "correo" => $correo);
+    }else {
+        //insertar
+        $aClientes[] = array(
+            "documento" => $documento,
+            "nombre" => $nombre,
+            "telefono" => $telefono,
+            "correo" => $correo);
+
+    }
+
+   
 
     //convertir el array de $aClientes a jsonClientes
     $jsonClientes = json_encode($aClientes);
@@ -38,7 +51,7 @@ if ($_POST) {
 
     file_put_contents("archivo.txt", $jsonClientes);
 }
-$pos = isset($_GET["pos"]) && $_GET["pos"] >= 0? $_GET["pos"]:"";
+
 
 if(isset($_GET["do"]) && $_GET["do"] == "editar"){
     
