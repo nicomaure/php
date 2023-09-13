@@ -26,12 +26,16 @@ if ($_POST) {
     $correo = trim($_POST["txtCorreo"]);
 
     if($pos>=0){
+        if(isset($_GET["do"]) && $_GET["do"] == "editar"){
+  
         //actualizar
         $aClientes[$pos] = array(
             "documento" => $documento,
             "nombre" => $nombre,
             "telefono" => $telefono,
             "correo" => $correo);
+        }
+        header("Location: index.php");
     }else {
         //insertar
         $aClientes[] = array(
@@ -40,7 +44,10 @@ if ($_POST) {
             "telefono" => $telefono,
             "correo" => $correo);
 
+        header("Location: index.php");
     }
+
+    
 
    
 
@@ -53,10 +60,7 @@ if ($_POST) {
 }
 
 
-if(isset($_GET["do"]) && $_GET["do"] == "editar"){
-    
-    
-}
+
 if(isset($_GET["do"]) && $_GET["do"] == "eliminar"){
   //Eliminar el array $aClientes la posición a borrar unset()
   unset($aClientes[$pos]);
