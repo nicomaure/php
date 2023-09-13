@@ -58,7 +58,17 @@ if(isset($_GET["do"]) && $_GET["do"] == "editar"){
     
 }
 if(isset($_GET["do"]) && $_GET["do"] == "eliminar"){
-    $pos = isset($_GET["pos"]) && $_GET["pos"] >= 0? $_GET["pos"]:"";
+  //Eliminar el array $aClientes la posición a borrar unset()
+  unset($aClientes[$pos]);
+
+  //Convertir el array en json
+  $jsonClientes = json_encode($aClientes);
+
+  //almacenar el json en el archivo
+  file_put_contents("archivo.txt", $jsonClientes);
+ //redirecciono para limpiar la barra de direccion 
+  header("Location: index.php");
+
 }
 
 ?>
