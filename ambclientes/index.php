@@ -24,6 +24,7 @@ if ($_POST) {
     $nombre = trim($_POST["txtNombre"]);
     $telefono = trim($_POST["txtTelefono"]);
     $correo = trim($_POST["txtCorreo"]);
+    $nombreImagen = "";
 
     if($pos>=0){
         if(isset($_GET["do"]) && $_GET["do"] == "editar"){
@@ -33,18 +34,27 @@ if ($_POST) {
             "documento" => $documento,
             "nombre" => $nombre,
             "telefono" => $telefono,
-            "correo" => $correo);
+            "correo" => $correo,
+            "imagen" => $nombreImagen);
         }
         header("Location: index.php");
     }else {
+        $nombreAleatorio = date("Ymdhmsi");//2021010420453510
+        $archivo_tmp = $_FILES["archivo"]["tmp_name"];
+        $extension = pathinfo($_FILES["archivo"]["name"], PATHINFO_EXTENSION);
+        if($extension == "jpg" || $extension == "jpeg" || $extension == "png"){
+            $nombreImagen = "$nombreAleatorio.$extension";
+        move_uploaded_file($archivo_tmp, "imagenes/$nombreImagen");    
+        }
+
         //insertar
         $aClientes[] = array(
             "documento" => $documento,
             "nombre" => $nombre,
             "telefono" => $telefono,
-            "correo" => $correo);
-
-        header("Location: index.php");
+            "correo" => $correo,
+            "imagen" => $nombreImagen);
+        
     }
 
     
@@ -75,6 +85,20 @@ if(isset($_GET["do"]) && $_GET["do"] == "eliminar"){
 
 }
 
+
+
+
+ // function guardarArchivo(){
+   // if($_FILES["archivo"]["error"]===UPLOAD_ERR_OK){
+     //   $nombreAleatorio = date("Ymdhmsi");//2021010420453510
+       // $archivo_tmp = $_FILES["archivo"]["tmp_name"];
+       // $extension = pathinfo($_FILES["archivo"]["name"], PATHINFO_EXTENSION);
+      //  if($extension == "jpg" || $extension == "jpeg" || $extension == "png"){
+     //       move_uploaded_file($archivo_tmp, "imagenes/$nombreAleatorio.$extension");
+    //    }
+
+ //   }
+// }
 ?>
 
 <!DOCTYPE html>
@@ -142,7 +166,7 @@ if(isset($_GET["do"]) && $_GET["do"] == "eliminar"){
 
                         <?php foreach ($aClientes as $pos => $cliente) : ?>
                             <tr>
-                                <td></td>
+                                <td><?php echo $cliente["imagen"]; ?></td>
                                 <td><?php echo $cliente["documento"]; ?></td>
                                 <td><?php echo $cliente["nombre"]; ?></td>
                                 <td><?php echo $cliente["correo"]; ?></td>
