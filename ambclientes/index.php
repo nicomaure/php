@@ -28,6 +28,22 @@ if ($_POST) {
 
     if($pos>=0){
         if(isset($_GET["do"]) && $_GET["do"] == "editar"){
+            if($_FILES["archivo"]["error"]===UPLOAD_ERR_OK){
+                $nombreAleatorio = date("Ymdhmsi");//2021010420453510
+                $archivo_tmp = $_FILES["archivo"]["tmp_name"];
+                $extension = strtolower(pathinfo($_FILES["archivo"]["name"], PATHINFO_EXTENSION));
+                if($extension == "jpg" || $extension == "jpeg" || $extension == "png"){
+                    $nombreImagen = "$nombreAleatorio.$extension";
+                move_uploaded_file($archivo_tmp, "imagenes/$nombreImagen");    
+                }
+                //eliminar la imagen anterior
+                if($aClientes[$pos]["imagen"] !="" &&  file_exists("imagenes/".$aClientes[$pos]["imagen"])){
+                unlink("imagenes/".$aClientes[$pos]["imagen"]);
+                }
+            } else {
+                //Mantener el monbre de la imagen
+                $nombreImagen = $aClientes[$pos]["imagen"];
+            }   
   
         //actualizar
         $aClientes[$pos] = array(
@@ -39,14 +55,15 @@ if ($_POST) {
         }
         header("Location: index.php");
     }else {
-        $nombreAleatorio = date("Ymdhmsi");//2021010420453510
-        $archivo_tmp = $_FILES["archivo"]["tmp_name"];
-        $extension = pathinfo($_FILES["archivo"]["name"], PATHINFO_EXTENSION);
-        if($extension == "jpg" || $extension == "jpeg" || $extension == "png"){
-            $nombreImagen = "$nombreAleatorio.$extension";
-        move_uploaded_file($archivo_tmp, "imagenes/$nombreImagen");    
-        }
-
+        if($_FILES["archivo"]["error"]===UPLOAD_ERR_OK){
+            $nombreAleatorio = date("Ymdhmsi");//2021010420453510
+            $archivo_tmp = $_FILES["archivo"]["tmp_name"];
+            $extension = strtolower(pathinfo($_FILES["archivo"]["name"], PATHINFO_EXTENSION));
+            if($extension == "jpg" || $extension == "jpeg" || $extension == "png"){
+                $nombreImagen = "$nombreAleatorio.$extension";
+            move_uploaded_file($archivo_tmp, "imagenes/$nombreImagen");    
+            }
+        }    
         //insertar
         $aClientes[] = array(
             "documento" => $documento,
@@ -130,7 +147,7 @@ if(isset($_GET["do"]) && $_GET["do"] == "eliminar"){
                     </div>
                     <div>
                         <label for="">Nombre: *</label>
-                        <input type="text" name="txtNombre" id="txtNombre" class="form-control my-2 shadow" placeholder="Ingrese nombre y apellido" required value="<?php echo isset($aClientes[$pos])? $aClientes[$pos]["nombre"]: ""; ?>">
+                        <input type="text" name="txtNombre" id="txtNombre" class="form-control my-2 shadow" placeholder="Ingrese el nombre de su mascota" required value="<?php echo isset($aClientes[$pos])? $aClientes[$pos]["nombre"]: ""; ?>">
                     </div>
                     <div>
                         <label for="">Teléfono: *</label>
@@ -166,7 +183,12 @@ if(isset($_GET["do"]) && $_GET["do"] == "eliminar"){
 
                         <?php foreach ($aClientes as $pos => $cliente) : ?>
                             <tr>
-                                <td><?php echo $cliente["imagen"]; ?></td>
+                                <td>
+                                    <?php if($cliente["imagen"] != ""): ?>
+                                        <img src="imagenes/<?php echo $cliente["imagen"]; ?>" class="img-thumbnail">
+                                    <?php endif; ?>    
+                                </td>
+
                                 <td><?php echo $cliente["documento"]; ?></td>
                                 <td><?php echo $cliente["nombre"]; ?></td>
                                 <td><?php echo $cliente["correo"]; ?></td>
