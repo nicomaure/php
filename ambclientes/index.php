@@ -103,19 +103,7 @@ if(isset($_GET["do"]) && $_GET["do"] == "eliminar"){
 }
 
 
-
-
- // function guardarArchivo(){
-   // if($_FILES["archivo"]["error"]===UPLOAD_ERR_OK){
-     //   $nombreAleatorio = date("Ymdhmsi");//2021010420453510
-       // $archivo_tmp = $_FILES["archivo"]["tmp_name"];
-       // $extension = pathinfo($_FILES["archivo"]["name"], PATHINFO_EXTENSION);
-      //  if($extension == "jpg" || $extension == "jpeg" || $extension == "png"){
-     //       move_uploaded_file($archivo_tmp, "imagenes/$nombreAleatorio.$extension");
-    //    }
-
- //   }
-// }
+ 
 ?>
 
 <!DOCTYPE html>
