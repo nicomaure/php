@@ -43,6 +43,11 @@ error_reporting(E_ALL);
                         <label for="">Título</label>
                         <input type="text" name="txtTitulo" id="txtTitulo" class="form-control">
                     </div>
+                    <div>
+                        <label for="">Descripción</label>
+                        <input type="submit" value="" class="form-control">
+                    </div>
+
                     
                 </form>
             </div>
