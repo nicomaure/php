@@ -22,6 +22,31 @@ error_reporting(E_ALL);
                 <h1>Gestor de tareas</h1>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <form action="" method="post">
+                    <div class="row">
+                     <div class="col-4">
+                            <label for="">Prioridad</label>
+                            <input type="text" name="txtPrioridad" id="txtPrioridad" class="form-control">
+                        </div>
+                        <div class="col-4">
+                            <label for="">Usuario</label>
+                            <input type="text" name="txtUsuario" id="txtUsuario" class="form-control">
+                        </div>
+                        <div class="col-4">
+                            <label for="">Estado</label>
+                            <input type="text" name="txtEstadp" id="txtEstado" class="form-control">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="">Título</label>
+                        <input type="text" name="txtTitulo" id="txtTitulo" class="form-control">
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
         
 
     </main>
