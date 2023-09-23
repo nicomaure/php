@@ -23,33 +23,58 @@ error_reporting(E_ALL);
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 pb-5">
                 <form action="" method="post">
                     <div class="row">
                      <div class="col-4">
                             <label for="">Prioridad</label>
-                            <input type="text" name="txtPrioridad" id="txtPrioridad" class="form-control">
+                            <input type="text" name="txtPrioridad" id="txtPrioridad" class="form-control shadow">
                         </div>
                         <div class="col-4">
                             <label for="">Usuario</label>
-                            <input type="text" name="txtUsuario" id="txtUsuario" class="form-control">
+                            <input type="text" name="txtUsuario" id="txtUsuario" class="form-control shadow">
                         </div>
-                        <div class="col-4">
+                        <div class="col-4 pb-3">
                             <label for="">Estado</label>
-                            <input type="text" name="txtEstadp" id="txtEstado" class="form-control">
+                            <input type="text" name="txtEstadp" id="txtEstado" class="form-control shadow">
                         </div>
                     </div>
-                    <div>
+                    <div class="pb-3">
                         <label for="">Título</label>
-                        <input type="text" name="txtTitulo" id="txtTitulo" class="form-control">
+                        <input type="text" name="txtTitulo" id="txtTitulo" class="form-control shadow">
                     </div>
-                    <div>
+                    <div class="pb-3">
                         <label for="">Descripción</label>
-                        <input type="submit" value="" class="form-control">
+                        <textarea name="txtMensaje" id="txtMensaje" cols="" rows="" class="form-control shadow"></textarea>
                     </div>
-
+                    <div class="text-center">
+                    <button type="submit" name="btnEnviar" class="btn btn-primary text-white">ENVIAR</button>
+                    <button type="submit" name="btnCancelar" class="btn btn-secondary text-white">CANCELAR</button>
+                    </div>
                     
                 </form>
+            </div>
+            <div class="col-12">
+                <table class="table border table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Fercha de Inserción</th>
+                            <th>Título</th>
+                            <th>Prioridad</th>
+                            <th>Usuario</th>
+                            <th>Estado</th>
+                            <th></th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                        </tr>
+
+                    </tbody>
+                </table>
             </div>
         </div>
         
