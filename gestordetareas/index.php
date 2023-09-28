@@ -3,8 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-hola me lla mnicolas
-soy de 
+
 ?>
 
 
@@ -68,13 +67,22 @@ soy de
                             <th>Prioridad</th>
                             <th>Usuario</th>
                             <th>Estado</th>
-                            <th></th>
+                            <th>Acciones</th>
                         </tr>
                         
                     </thead>
                     <tbody>
                         <tr>
-                            <td></td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>
+                            <a href="" class="btn btn-secondary"> <i class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                            </td>
                         </tr>
 
                     </tbody>
