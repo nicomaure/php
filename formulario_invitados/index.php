@@ -16,8 +16,11 @@ error_reporting(E_ALL);
 <body>
     <main class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 py-3">
                 <h1>Lista de invitados</h1>
+            </div>
+            <div>
+                <p>Complete el siguiente formulario</p>
             </div>
 
         </div>
