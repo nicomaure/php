@@ -19,8 +19,28 @@ error_reporting(E_ALL);
             <div class="col-12 py-3">
                 <h1>Lista de invitados</h1>
             </div>
-            <div>
+            <div class="col-12">
                 <p>Complete el siguiente formulario</p>
+            </div>
+            <div class="col-6">
+                <form action="" method="post">
+                    <div class="row">
+                        <div class="col-12 pb-3">
+                            <p>Ingrese el DNI:</p>
+                            <input type="text" name="txtNombre" class="form-control">
+                            <input type="submit" value="Verificar invitado" name="btnProcesar" class="btn btn-primary">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Ingresa el código segreto para el pase VIP:</p>
+                            <input type="text" name="txtPregunta" class="form-control">
+                            <input type="submit" value="Verificar Código" name="btnVip" class="btn btn-primary">
+
+                        </div>
+                    </div>
+                </form>
+
             </div>
 
         </div>
