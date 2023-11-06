@@ -38,10 +38,8 @@ class Alumno extends Persona{
         echo "Nota Promedio: " . number_format($this->calcularPromedio(),2,",",".") . "<br><br>";
 
     }
-    public function calcularPromedio(){
-        $promedio = 0;
-        $promedio = ($this->notaPhp + $this->notaPorfolio + $this->notaProyecto)/3;
-        return $promedio;
+    public function calcularPromedio(){      
+        return ($this->notaPhp + $this->notaPorfolio + $this->notaProyecto)/3;
     }
 }
 
