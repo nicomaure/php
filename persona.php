@@ -10,9 +10,7 @@ class Persona{
     public $edad;
     public $nacionalidad;
 
-    public function imprimir(){
-
-    }
+    public function imprimir(){}
 }
 
 class Alumno extends Persona{
@@ -29,32 +27,43 @@ class Alumno extends Persona{
         $this->notaProyecto= 0.0;
     }
     
-
     public function imprimir(){
-
+        echo "Nombre: " . $this->nombre . "<br>";
+        echo "DNI: " . $this->dni . "<br>";
+        echo "Edad: " . $this->edad . "<br>";
+        echo "Nacionalidad: " . $this->nacionalidad . "<br>";
+        echo "Nota PHP: " . $this->notaPhp . "<br>";
+        echo "Nota Porfolio: " . $this->notaPorfolio . "<br>";
+        echo "Nota Proyecto: " . $this->notaProyecto . "<br>";
     }
-
-    public function calcularPromedio(){
-
-    }
+    public function calcularPromedio(){}
 }
 
 class Docente extends Persona{
     public $especialidad;
 
-    public function imprimir()
-    {
-        
-    }
-
-    public function imprimirEspecialidadesHabilitadas(){
-        
-    }
+    public function imprimir(){}
+    public function imprimirEspecialidadesHabilitadas(){}
 }
 
 // Programa
 
 $alumno1 = new Alumno();
-$alumno1 ->promedio= 8;
-$alumno1 ->nombre= "Nico";
+$alumno1->dni = "28774109";
+$alumno1->nombre = "Nico";
+$alumno1->notaPhp = 9;
+$alumno1->notaPorfolio = 8;
+$alumno1->notaProyecto = 8;
+$alumno1->imprimir();
+
+$alumno2 = new Alumno();
+$alumno2->dni = "28542580";
+$alumno2->nombre = "Anahi";
+$alumno2->notaPhp = 5;
+$alumno2->notaPorfolio = 10;
+$alumno2->notaProyecto = 9;
+$alumno2->imprimir();
+
+
+
 ?>
