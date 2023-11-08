@@ -49,6 +49,11 @@ class Docente extends Persona{
     const ESPECIALIDAD_ECO = "Economia Aplicada";
     const ESPECIALIDAD_BBDD = "Base de Datos";
 
+    public  function __destruct()
+    {
+        echo "Destruyendo el objeto " . $this->nombre . "<br>";
+    }
+
 
     public function imprimir(){}
     public function imprimirEspecialidadesHabilitadas(){}
