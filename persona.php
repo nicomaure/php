@@ -49,14 +49,19 @@ class Docente extends Persona{
     const ESPECIALIDAD_ECO = "Economia Aplicada";
     const ESPECIALIDAD_BBDD = "Base de Datos";
 
-    public  function __destruct()
-    {
-        echo "Destruyendo el objeto " . $this->nombre . "<br>";
-    }
+    #public  function __destruct()
+    #{
+    #   echo "Destruyendo el objeto " . $this->nombre . "<br>";
+    #}
 
 
     public function imprimir(){}
-    public function imprimirEspecialidadesHabilitadas(){}
+    public function imprimirEspecialidadesHabilitadas(){
+        echo "Un docente puede tener las siguientes especialidades:<br>";
+        echo "Especialiad 1: " . self::ESPECIALIDAD_WP . "<br>";
+        echo "Especialiad 2: " . self::ESPECIALIDAD_ECO . "<br>";
+        echo "Especialiad 3: " . self::ESPECIALIDAD_BBDD . "<br>";
+    }
 }
 
 // Programa
@@ -76,6 +81,10 @@ $alumno2->notaPhp = 5;
 $alumno2->notaPorfolio = 10;
 $alumno2->notaProyecto = 9;
 $alumno2->imprimir();
+
+$docente1 = new Docente();
+$docente1->nombre = "Juan Perez";
+$docente1->imprimirEspecialidadesHabilitadas();
 
 
 
