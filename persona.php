@@ -45,6 +45,10 @@ class Alumno extends Persona{
 
 class Docente extends Persona{
     public $especialidad;
+    const ESPECIALIDAD_WP = "Wordpress";
+    const ESPECIALIDAD_ECO = "Economia Aplicada";
+    const ESPECIALIDAD_BBDD = "Base de Datos";
+
 
     public function imprimir(){}
     public function imprimirEspecialidadesHabilitadas(){}
