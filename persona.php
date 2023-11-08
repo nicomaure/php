@@ -10,6 +10,12 @@ class Persona{
     public $edad;
     public $nacionalidad;
 
+    public  function __destruct()
+    {
+       echo "Destruyendo el objeto " . $this->nombre . "<br>";
+    }
+
+
     public function imprimir(){}
 }
 
@@ -26,6 +32,12 @@ class Alumno extends Persona{
         $this->notaPhp= 0.0;
         $this->notaProyecto= 0.0;
     }
+
+    public  function __destruct()
+    {
+       echo "Destruyendo el objeto " . $this->nombre . "<br>";
+    }
+
     
     public function imprimir(){
         echo "Nombre: " . $this->nombre . "<br>";
@@ -49,10 +61,10 @@ class Docente extends Persona{
     const ESPECIALIDAD_ECO = "Economia Aplicada";
     const ESPECIALIDAD_BBDD = "Base de Datos";
 
-    #public  function __destruct()
-    #{
-    #   echo "Destruyendo el objeto " . $this->nombre . "<br>";
-    #}
+    public  function __destruct()
+    {
+       echo "Destruyendo el objeto " . $this->nombre . "<br>";
+    }
 
 
     public function imprimir(){}
