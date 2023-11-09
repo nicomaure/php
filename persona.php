@@ -5,17 +5,28 @@ error_reporting(E_ALL);
 
 
 class Persona{
-    public $dni;
-    public $nombre;
-    public $edad;
-    public $nacionalidad;
+    protected $dni;
+    protected $nombre;
+    protected $edad;
+    protected $nacionalidad;
 
-    public  function __destruct()
-    {
-       echo "Destruyendo el objeto " . $this->nombre . "<br>";
-    }
+    public  function __destruct(){echo "Destruyendo el objeto " . $this->nombre . "<br>";}
 
+//Set y Get para  clases pretected 
+    public function setDni($dni){ $this->dni = $dni;}
+    public function getDni (){ return $this->dni; }
 
+    public function setNombre($nombre){ $this->nombre = $nombre;}
+    public function getNombre(){ return $this->nombre;}
+
+    public function setEdad($edad){ $this->edad = $edad;}
+    public function getEdad (){ return $this->edad;}
+
+    public function setNacionalidad($nacionalidad){ $this->nacionalidad = $nacionalidad;}
+    public function getNacionalidad(){return $this->nacionalidad;}
+        
+    
+          
     public function imprimir(){}
 }
 
@@ -33,10 +44,10 @@ class Alumno extends Persona{
         $this->notaProyecto= 0.0;
     }
 
-    public  function __destruct()
-    {
-       echo "Destruyendo el objeto " . $this->nombre . "<br>";
-    }
+    public  function __destruct(){ echo "Destruyendo el objeto " . $this->nombre . "<br>";}
+
+    public function __get($propiedad){ return $this->$propiedad;}
+    public function __set($propiedad, $valor){ $this->$propiedad = $valor;}
 
     
     public function imprimir(){
@@ -74,6 +85,9 @@ class Docente extends Persona{
         echo "Especialiad 2: " . self::ESPECIALIDAD_ECO . "<br>";
         echo "Especialiad 3: " . self::ESPECIALIDAD_BBDD . "<br>";
     }
+
+    public function __get($propiedad){ return $this->$propiedad;}
+    public function __set($propiedad, $valor){ $this->$propiedad = $valor;}
 }
 
 // Programa
