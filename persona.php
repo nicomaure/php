@@ -96,8 +96,9 @@ class Docente extends Persona{
 // Programa
 
 $alumno1 = new Alumno();
-$alumno1->dni = "28774109";
-$alumno1->nombre = "Nico";
+$alumno1->setDni("28774109");
+$alumno1->nombre = "Nico <br>";
+echo "El nombre es " . $alumno1->getNombre();
 $alumno1->notaPhp = 9;
 $alumno1->notaPorfolio = 8;
 $alumno1->notaProyecto = 8;
@@ -117,4 +118,4 @@ $docente1->imprimirEspecialidadesHabilitadas();
 
 
 
-?>
+?>-
