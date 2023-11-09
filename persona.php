@@ -10,7 +10,10 @@ class Persona{
     protected $edad;
     protected $nacionalidad;
 
-    public  function __destruct(){echo "Destruyendo el objeto " . $this->nombre . "<br>";}
+    public function __construct($dni="", $nombre="", $edad="", $nacionalidad=""){
+        $this->dni = $dni;}
+
+    public function __destruct(){echo "Destruyendo el objeto " . $this->nombre . "<br>";}
 
 //Set y Get para  clases pretected 
     public function setDni($dni){ $this->dni = $dni;}
@@ -67,7 +70,7 @@ class Alumno extends Persona{
 }
 
 class Docente extends Persona{
-    public $especialidad;
+    private $especialidad;
     const ESPECIALIDAD_WP = "Wordpress";
     const ESPECIALIDAD_ECO = "Economia Aplicada";
     const ESPECIALIDAD_BBDD = "Base de Datos";
