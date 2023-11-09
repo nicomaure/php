@@ -32,10 +32,10 @@ class Persona{
 
 class Alumno extends Persona{
 
-    public $legajo;
-    public $notaPorfolio;
-    public $notaPhp;
-    public $notaProyecto;
+    private $legajo;
+    private $notaPorfolio;
+    private $notaPhp;
+    private $notaProyecto;
 
     public function __construct()
     {
