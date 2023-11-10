@@ -11,9 +11,17 @@ class Cliente{
     private $telefono;
     private $descuento;
 
-    public function __construct()
-    {
+    public function __construct(){
         $this->descuento = 0.0;
+    }
+
+    public function __get($propiedad){
+        return $this->$propiedad;
+    }
+
+    public function __set($propiedad, $valor)
+    {
+        $this->$propiedad = $valor;
     }
 
     public function imprimir(){
@@ -33,12 +41,22 @@ class Producto{
     private $descripcion;
     private $iva;
 
-    public function __construct()
+    
+
+    public function __get($propiedad){
+        return $this->$propiedad;
+    }
+
+    public function __set($propiedad, $valor)
     {
+        $this->$propiedad = $valor;
+    }
+
+    public function __construct(){
         $this->precio = 0.0;
         $this->iva = 0.0;
     }
-
+    
     public function imprimir(){
         echo "cod: " . $this->cod . "<br>";
         echo "Nombre: " . $this->nombre . "<br>";
@@ -56,8 +74,16 @@ class Carrito{
     private $subtotal;
     private $total;
 
-    public function __construct()
+    public function __get($propiedad){
+        return $this->$propiedad;
+    }
+
+    public function __set($propiedad, $valor)
     {
+        $this->$propiedad = $valor;
+    }
+
+    public function __construct(){
         $this->aProductos = array();
         $this->subtotal = 0.0;
         $this->total = 0.0;
