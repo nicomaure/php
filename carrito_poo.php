@@ -102,9 +102,24 @@ $cliente1->nombre = "Bernabe";
 $cliente1->correo = "bernabe@gmail.com";
 $cliente1->telefono = "+5411886656";
 $cliente1->descuento = 0.05;
-print_r($cliente1);
+//print_r($cliente1);
 $cliente1->imprimir();
 
+$producto1 = new Producto();
+$producto1->cod ="ABC855";
+$producto1->nombre = "Hp G60 15\"";
+$producto1->descripcion ="Esto es una PC Hp";
+$producto1->precio = 250000;
+$producto1->iva = 21;
+$producto1->imprimir();
+
+$producto2 = new Producto();
+$producto2->cod ="ABC555";
+$producto2->nombre = "Heladera Whirpol Wt20";
+$producto2->descripcion ="Esto es una heladera no froze";
+$producto2->precio = 500000;
+$producto2->iva = 10.5;
+$producto2->imprimir();
 
 
 
