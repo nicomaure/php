@@ -95,5 +95,17 @@ class Carrito{
 
 }
 
+//Programa
+$cliente1 = new Cliente();
+$cliente1->dni = "287761403";
+$cliente1->nombre = "Bernabe";
+$cliente1->correo = "bernabe@gmail.com";
+$cliente1->telefono = "+5411886656";
+$cliente1->descuento = 0.05;
+print_r($cliente1);
+$cliente1->imprimir();
+
+
+
 
 ?>
