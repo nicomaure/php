@@ -29,7 +29,7 @@ class Cliente{
         echo "Nombre: " . $this->nombre . "<br>";
         echo "Correo: " . $this->correo . "<br>";
         echo "Telefono: " . $this->telefono . "<br>";
-        echo "Descuento: " . $this->descuento . "<br>";
+        echo "Descuento: " . $this->descuento . "<br><br>";
     }
 
 }
@@ -62,7 +62,7 @@ class Producto{
         echo "Nombre: " . $this->nombre . "<br>";
         echo "Precio: " . $this->precio . "<br>";
         echo "Descripcion: " . $this->descripcion . "<br>";
-        echo "iva: " . $this->iva . "<br>";
+        echo "iva: " . $this->iva . "<br><br>";
     }
 
 
