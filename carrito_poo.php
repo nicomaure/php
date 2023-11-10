@@ -1,4 +1,7 @@
 <?php
+
+use Mpdf\Tag\Table;
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -91,7 +94,10 @@ class Carrito{
 
     public function cargarProducto(){}
 
-    public function imprimirTicket(){}
+    public function imprimirTicket(){
+        echo "<table class='table table-hover border'>";
+        echo "<tr><td></td></tr>";
+    }
 
 }
 
@@ -121,6 +127,13 @@ $producto2->precio = 500000;
 $producto2->iva = 10.5;
 $producto2->imprimir();
 
+$carrito= new Carrito();
+$carrito->cliente = $cliente1;
+//print_r($carrito);
+$carrito->cargarProducto($producto1);
+$carrito->cargarProducto($producto2);
+//print_r($carrito);
+$carrito->imprimirTicket();//Imprime ticket de la compra.
 
 
 ?>
