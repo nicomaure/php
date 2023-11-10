@@ -91,6 +91,8 @@ class Docente extends Persona{
 
     public function __get($propiedad){ return $this->$propiedad;}
     public function __set($propiedad, $valor){ $this->$propiedad = $valor;}
+
+  
 }
 
 // Programa
