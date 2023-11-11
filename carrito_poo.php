@@ -88,7 +88,7 @@ class Carrito{
 
     public function __construct(){
         $this->aProductos = array();
-        $this->subtotal = 0.0;
+        $this->subTotal = 0.0;
         $this->total = 0.0;
     }
 
@@ -98,7 +98,7 @@ class Carrito{
 
     public function imprimirTicket(){
         echo "<table class='table table-hover border style='width:400px'>";
-        echo "<tr><th colspan='2' class='text-center'>ECO MARKET</th></tr>;
+        echo "<tr><th colspan='2' class='text-center'>ECO MARKET</th></tr>
               <tr>
                 <th>Fecha</th>
                 <td>" . date("d/m/Y H:i:s") . "</td>
