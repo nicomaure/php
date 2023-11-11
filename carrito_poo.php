@@ -100,15 +100,15 @@ class Carrito{
         echo "<table class='table table-hover border style='width:400px'>";
         echo "<tr><th colspan='2' class='text-center'>ECO MARKET</th></tr>
               <tr>
-                <th>Fecha</th>
+                <th>Fecha:</th>
                 <td>" . date("d/m/Y H:i:s") . "</td>
               </tr>  
               <tr>
-                <th>DNI</th>
+                <th>DNI:</th>
                 <td>" . $this->cliente->dni . "</td>
               </tr>  
               <tr>
-                <th>DNI</th>
+                <th>Nombre:</th>
                 <td>" . $this->cliente->nombre . "</td>
               </tr>  
               <th colspan='2'>Productos:</th>
