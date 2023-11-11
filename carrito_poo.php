@@ -164,12 +164,12 @@ $producto2->imprimir();
 
 $carrito= new Carrito();
 $carrito->cliente = $cliente1;
-//echo "Nombre del cliente: " . $carrito->cliente->nombre . "<br>";
+echo "Nombre del cliente: " . $carrito->cliente->nombre . "<br>";
 //print_r($carrito);
 $carrito->cargarProducto($producto1);
 $carrito->cargarProducto($producto2);
 //print_r($carrito);
-//echo $carrito->aProductos[0]->nombre;
+echo $carrito->aProductos[0]->nombre;
 //$carrito->imprimirTicket();//Imprime ticket de la compra.
 
 
