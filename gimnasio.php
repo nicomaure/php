@@ -6,19 +6,97 @@ error_reporting(E_ALL);
 
 //Definiciones de Clases
 class Persona{
+    protected $dni;
+    protected $nombre;
+    protected $correo;
+    protected $celular;
+
+
+//metodos setter y getter
+    public function __get($propiedad){
+        return $this->$propiedad;
+    }
+
+    public function __set($propiedad, $valor)
+    {
+        $this->$propiedad = $valor;
+    }
 
 }
 
 
 class Alumno extends Persona{
 
+    //metodos setter y getter
+    public function __get($propiedad){
+        return $this->$propiedad;
+    }
+
+    public function __set($propiedad, $valor)
+    {
+        $this->$propiedad = $valor;
+    }
+    private $fechaNac;
+    private $peso;
+    private $altura;
+    private $aptoFisico;
+    private $presentismo;
+
+    public function __construct(){
+        $this->peso = 0.0;
+        $this->altura = 0.0;
+        $this->aptoFisico = false;
+        $this->presentismo = 0.0;
+    }
+
+    public function setFichamedica(){}
+
 }
 
 class Entrenador extends Persona{
 
+    //metodos setter y getter
+    public function __get($propiedad){
+        return $this->$propiedad;
+    }
+
+    public function __set($propiedad, $valor)
+    {
+        $this->$propiedad = $valor;
+    }
+
+    private $aClases;
+    public function __construct(){
+        $this->aClases = array();
+        }
+
+    public function asignarClase(){}
 }
 
 class Clase{
+
+    //metodos setter y getter
+    public function __get($propiedad){
+        return $this->$propiedad;
+    }
+
+    public function __set($propiedad, $valor)
+    {
+        $this->$propiedad = $valor;
+    }
+
+    
+    private $nombre;
+    private $entrenador;
+    private $alumnos;
+    
+    public function __construct(){
+        $this->alumnos = array();
+        }
+
+    public function asignarEntrenador(){}
+    public function inscribirAlumno(){}
+    public function imprimirListado(){}
 
 }
 
