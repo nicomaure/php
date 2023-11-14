@@ -27,15 +27,6 @@ class Persona{
 
 class Alumno extends Persona{
 
-    //metodos setter y getter
-    public function __get($propiedad){
-        return $this->$propiedad;
-    }
-
-    public function __set($propiedad, $valor)
-    {
-        $this->$propiedad = $valor;
-    }
     private $fechaNac;
     private $peso;
     private $altura;
@@ -49,12 +40,28 @@ class Alumno extends Persona{
         $this->presentismo = 0.0;
     }
 
+    //metodos setter y getter
+    public function __get($propiedad){
+        return $this->$propiedad;
+    }
+
+    public function __set($propiedad, $valor)
+    {
+        $this->$propiedad = $valor;
+    }
+
     public function setFichamedica(){}
 
 }
 
 class Entrenador extends Persona{
 
+    private $aClases;
+
+    public function __construct(){
+        $this->aClases = array();
+        }
+
     //metodos setter y getter
     public function __get($propiedad){
         return $this->$propiedad;
@@ -64,19 +71,22 @@ class Entrenador extends Persona{
     {
         $this->$propiedad = $valor;
     }
-
-    private $aClases;
-    public function __construct(){
-        $this->aClases = array();
-        }
 
     public function asignarClase(){}
 }
 
 class Clase{
 
+   
+    private $nombre;
+    private $entrenador;
+    private $alumnos;
+    
+    public function __construct(){
+        $this->aAlumnos = array();
+        }
     //metodos setter y getter
-    public function __get($propiedad){
+     public function __get($propiedad){
         return $this->$propiedad;
     }
 
@@ -85,14 +95,6 @@ class Clase{
         $this->$propiedad = $valor;
     }
 
-    
-    private $nombre;
-    private $entrenador;
-    private $alumnos;
-    
-    public function __construct(){
-        $this->alumnos = array();
-        }
 
     public function asignarEntrenador(){}
     public function inscribirAlumno(){}
