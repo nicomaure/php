@@ -3,7 +3,13 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+class Persona {
+    protected $dni;
+    protected $nombre;
+    protected $correo;
+    protected $celular;
 
+}
 class Tarjeta {
     private $nombreTitular;
     private $numero;
@@ -13,15 +19,6 @@ class Tarjeta {
     private $cvv;
 
 }
-
-class Persona {
-    protected $dni;
-    protected $nombre;
-    protected $correo;
-    protected $celular;
-
-}
-
 class Cliente {
     private $aTarjetas = array();
     private $vActivo;
