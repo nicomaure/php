@@ -186,18 +186,18 @@ $clase2->inscribirAlumno($alumno3);
 <body>
     <main class="container">
         <div class="row">
-            <div class="col-12 py-5">
+            <div class="col-12 py-3 text-center">
                 <h1>Gimnasio</h1>
 
             </div>
         </div>     
         <div class="row">
-            <div class="col-12 py-5">
+            <div class="col-12 py-3">
                 <?php $clase1->imprimirListado(); ?>    
             </div>
         </div>
         <div class="row">
-            <div class="col-12 py-5">
+            <div class="col-12 py-3">
                 <?php $clase2->imprimirListado(); ?>    
             </div>
         </div>
