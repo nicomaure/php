@@ -126,7 +126,7 @@ class Clase{
         echo "<tr><th>DNI</th><th>Nombre</th><th>Correo</th><th>Celular</th>";
         
         foreach($this->aAlumnos as $alumno){
-                echo "<tr><td>" . number_format($alumno->dni, 0,",",".") . "</td><td>" . $alumno->nombre . "</td><td>" . $alumno->correo . "</td><td>" . $alumno->celular . "</td><td>";
+                echo "<tr><td>" . number_format($alumno->dni, 0,",",".") . "</td><td>" . $alumno->nombre . "</td><td>" . $alumno->correo . "</td><td>" . $alumno->celular;
         
         }
         echo "</table>";
