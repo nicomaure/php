@@ -3,11 +3,16 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-class Persona {
+date_default_timezone_set('America/Argentina/Buenos_Aires');
+
+abstract class Persona {
     protected $dni;
     protected $nombre;
     protected $correo;
     protected $celular;
+
+
+
 
     public function __get($propiedad){
         return $this->$propiedad;
@@ -17,6 +22,8 @@ class Persona {
     {
         $this->$propiedad = $valor;
     }
+
+    abstract public function imprimir();
 
 }
 class Tarjeta {
@@ -77,10 +84,12 @@ class Cliente extends Persona {
         $this->aTarjetas[] = $tarjeta;
     }
     public function darDeBaja($fecha){
-        $this->fechaBaja = date_format(date_create($fecha), "d/m/Y");//convertir y dar formato a una fecha
+        $this->fechaBaja = $fecha;
         $this->bActivo = false; //baja logica
     }
-    public function imprimir(){}
+    public function imprimir(){
+        echo "test";
+    }
     
 
 }
@@ -105,7 +114,7 @@ $cliente2->correo = "bernabe@correo.com";
 $cliente2->celular = "1145326787";
 $cliente2->agregarTarjeta(new Tarjeta(Tarjeta::VISA,"4969508071710316","06/2021", "08/2025","865"));
 $cliente2->agregarTarjeta(new Tarjeta(Tarjeta::MASTERCARD,"5149107669552238", "03/2022", "04/2025","554"));
-
+$cliente2->darDeBaja(date("17/11/2023"));
 
 print_r($cliente1); 
 print_r($cliente2);

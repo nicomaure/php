@@ -11,6 +11,14 @@ class Persona{
     protected $correo;
     protected $celular;
 
+public function __construct($dni, $nombre, $correo, $celular)//defino constructor para parents
+{
+    $this->dni = $dni;
+    $this->nombre = $nombre;
+    $this->correo = $correo;
+    $this->celular = $celular;
+}
+
 
 //metodos setter y getter
     public function __get($propiedad){
@@ -34,10 +42,7 @@ class Alumno extends Persona{
     private $presentismo;
 
     public function __construct($dni, $nombre, $correo, $celular, $fechaNac){
-        $this->dni = $dni;
-        $this->nombre = $nombre;
-        $this->correo = $correo;
-        $this->celular = $celular;
+        parent:: __construct($dni, $nombre, $correo, $celular);
         $this->fechaNac = $fechaNac;
         $this->peso = 0.0;
         $this->altura = 0.0;
@@ -68,10 +73,7 @@ class Entrenador extends Persona{
 
 
     public function __construct($dni, $nombre, $correo, $celular){
-        $this->dni = $dni;
-        $this->nombre = $nombre;
-        $this->correo = $correo;
-        $this->celular = $celular;
+        parent:: __construct($dni, $nombre, $correo, $celular);
         $this->aClases= array();
         }
 
