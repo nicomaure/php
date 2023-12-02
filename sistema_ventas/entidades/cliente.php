@@ -1,8 +1,9 @@
 <?php
 
+
 class Cliente
 {
-    private $idcliente;
+    private $idcliente; //coloco cada fila de la tabla cliente
     private $nombre;
     private $cuit;
     private $telefono;
