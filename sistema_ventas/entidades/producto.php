@@ -60,7 +60,7 @@ class Producto {
         $this->idproducto = $mysqli->insert_id;
         //Cierra la conexión
         $mysqli->close();
-    }
+    }  
 
     public function actualizar(){
 
