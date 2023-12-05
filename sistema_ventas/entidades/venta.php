@@ -190,7 +190,12 @@ class Venta {
                 $entidadAux->idventa = $fila["idventa"];
                 $entidadAux->fk_idcliente = $fila["fk_idcliente"];
                 $entidadAux->fk_idproducto = $fila["fk_idproducto"];
-                $entidadAux->fecha = $fila["fecha"];
+                if(isset($fila["fecha"])){
+                    $entidadAux->fecha = $fila["fecha"];
+                }else{
+                    $entidadAux->fecha = ""; 
+                }
+                
                 $entidadAux->cantidad = $fila["cantidad"];
                 $entidadAux->total = $fila["total"];
                 $entidadAux->nombre_producto = $fila["nombre_producto"];
