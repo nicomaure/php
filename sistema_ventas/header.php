@@ -1,9 +1,9 @@
 <?php
 
-session_start();
-if(!isset($_SESSION["nombre"])){ //si no hay sesion activa me envia al login
-  header("location: login.php");
-}
+
+//if(!isset($_SESSION["nombre"])){ //si no hay sesion activa me envia al login
+ // header("location: login.php");
+//}
 
 if(isset($_POST["btnCerrar"])){
     session_destroy();
